@@ -1,0 +1,49 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: "2022-12-09T06:02:51Z"
+  labels:
+    app: currency
+  managedFields:
+  - apiVersion: v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:labels:
+          .: {}
+          f:app: {}
+      f:spec:
+        f:ports:
+          .: {}
+          k:{"port":5000,"protocol":"TCP"}:
+            .: {}
+            f:name: {}
+            f:port: {}
+            f:protocol: {}
+            f:targetPort: {}
+        f:selector:
+          .: {}
+          f:app: {}
+        f:sessionAffinity: {}
+        f:type: {}
+    manager: kubectl-create
+    operation: Update
+    time: "2022-12-09T06:02:51Z"
+  name: currency
+  namespace: traffic-external
+  resourceVersion: "1372296"
+  selfLink: /api/v1/namespaces/traffic-external/services/currency
+  uid: de4aedc1-bd45-4d6d-8944-2508bd024d57
+spec:
+  clusterIP: 172.30.207.150
+  ports:
+  - name: http
+    port: 5000
+    protocol: TCP
+    targetPort: 5000
+  selector:
+    app: currency
+  sessionAffinity: None
+  type: ClusterIP
+status:
+  loadBalancer: {}

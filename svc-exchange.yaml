@@ -1,0 +1,49 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: "2022-12-09T06:02:51Z"
+  labels:
+    app: exchange
+  managedFields:
+  - apiVersion: v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:labels:
+          .: {}
+          f:app: {}
+      f:spec:
+        f:ports:
+          .: {}
+          k:{"port":8080,"protocol":"TCP"}:
+            .: {}
+            f:name: {}
+            f:port: {}
+            f:protocol: {}
+            f:targetPort: {}
+        f:selector:
+          .: {}
+          f:app: {}
+        f:sessionAffinity: {}
+        f:type: {}
+    manager: kubectl-create
+    operation: Update
+    time: "2022-12-09T06:02:51Z"
+  name: exchange
+  namespace: traffic-external
+  resourceVersion: "1372316"
+  selfLink: /api/v1/namespaces/traffic-external/services/exchange
+  uid: fa622b90-015f-4dec-a7dd-0dd30b8d50d2
+spec:
+  clusterIP: 172.30.66.130
+  ports:
+  - name: http
+    port: 8080
+    protocol: TCP
+    targetPort: 8080
+  selector:
+    app: exchange
+  sessionAffinity: None
+  type: ClusterIP
+status:
+  loadBalancer: {}

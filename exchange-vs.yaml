@@ -1,0 +1,38 @@
+apiVersion: networking.istio.io/v1beta1
+kind: VirtualService
+metadata:
+  creationTimestamp: "2022-12-09T06:02:51Z"
+  generation: 1
+  managedFields:
+  - apiVersion: networking.istio.io/v1beta1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:spec:
+        .: {}
+        f:gateways: {}
+        f:hosts: {}
+        f:http: {}
+    manager: kubectl-create
+    operation: Update
+    time: "2022-12-09T06:02:51Z"
+  name: exchange-vservice
+  namespace: traffic-external
+  resourceVersion: "1372303"
+  selfLink: /apis/networking.istio.io/v1beta1/namespaces/traffic-external/virtualservices/exchange-vservice
+  uid: 018d33f4-ed12-4db6-8c27-4b2763c8b847
+spec:
+  gateways:
+  - exchange-gw
+  hosts:
+  - '*'
+  http:
+  - match:
+    - uri:
+        prefix: /exchange
+    rewrite:
+      uri: /
+    route:
+    - destination:
+        host: exchange
+        port:
+          number: 8080
