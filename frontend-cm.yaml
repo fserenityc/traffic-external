@@ -1,0 +1,21 @@
+apiVersion: v1
+data:
+  GW_ADDR: istio-ingressgateway-istio-system.apps.ocp4.example.com/exchange
+kind: ConfigMap
+metadata:
+  creationTimestamp: "2022-12-09T06:02:51Z"
+  managedFields:
+  - apiVersion: v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:data:
+        .: {}
+        f:GW_ADDR: {}
+    manager: kubectl-create
+    operation: Update
+    time: "2022-12-09T06:02:51Z"
+  name: frontend-cm
+  namespace: traffic-external
+  resourceVersion: "1372273"
+  selfLink: /api/v1/namespaces/traffic-external/configmaps/frontend-cm
+  uid: 959ecabc-3cd1-4c7a-9c6f-62b3d740276d
