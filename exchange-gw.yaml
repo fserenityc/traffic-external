@@ -1,2 +1,33 @@
-NAME          AGE
-exchange-gw   22d
+apiVersion: networking.istio.io/v1beta1
+kind: Gateway
+metadata:
+  creationTimestamp: "2022-12-09T06:02:51Z"
+  generation: 1
+  managedFields:
+  - apiVersion: networking.istio.io/v1beta1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:spec:
+        .: {}
+        f:selector:
+          .: {}
+          f:istio: {}
+        f:servers: {}
+    manager: kubectl-create
+    operation: Update
+    time: "2022-12-09T06:02:51Z"
+  name: exchange-gw
+  namespace: traffic-external
+  resourceVersion: "1372301"
+  selfLink: /apis/networking.istio.io/v1beta1/namespaces/traffic-external/gateways/exchange-gw
+  uid: 5005a019-0b33-4783-9f22-d1f3ca9dd981
+spec:
+  selector:
+    istio: ingressgateway
+  servers:
+  - hosts:
+    - '*'
+    port:
+      name: http
+      number: 80
+      protocol: HTTP

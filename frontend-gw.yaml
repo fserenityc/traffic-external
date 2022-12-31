@@ -1,2 +1,33 @@
-NAME          AGE
-frontend-gw   22d
+apiVersion: networking.istio.io/v1beta1
+kind: Gateway
+metadata:
+  creationTimestamp: "2022-12-09T06:02:51Z"
+  generation: 1
+  managedFields:
+  - apiVersion: networking.istio.io/v1beta1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:spec:
+        .: {}
+        f:selector:
+          .: {}
+          f:istio: {}
+        f:servers: {}
+    manager: kubectl-create
+    operation: Update
+    time: "2022-12-09T06:02:51Z"
+  name: frontend-gw
+  namespace: traffic-external
+  resourceVersion: "1372271"
+  selfLink: /apis/networking.istio.io/v1beta1/namespaces/traffic-external/gateways/frontend-gw
+  uid: 1a74b392-6056-4f30-b094-b28b2e52c054
+spec:
+  selector:
+    istio: ingressgateway
+  servers:
+  - hosts:
+    - '*'
+    port:
+      name: http
+      number: 80
+      protocol: HTTP
